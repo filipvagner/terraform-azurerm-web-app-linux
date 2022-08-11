@@ -13,6 +13,6 @@ resource "azurerm_linux_web_app" "this" {
   service_plan_id     = azurerm_service_plan.this.id
 
   site_config {
-    always_on = var.webapp_always_on == "F1" || var.webapp_always_on == "D1" || var.webapp_always_on == "SHARED" ? false : var.webapp_always_on
+    always_on = var.service_plan_sku == "F1" || var.service_plan_sku == "D1" || var.service_plan_sku == "SHARED" ? false : var.webapp_always_on
   }
 }
